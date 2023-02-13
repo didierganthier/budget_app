@@ -4,7 +4,7 @@
   <% if user_signed_in? %>
     <p class="text-lg">Logged in as <%= current_user.name %></p>
     <%= link_to "Add new category", new_category_path, class: "bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 my-5" %>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" %>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" %>
   <% else %>
     <%= link_to "Log in", new_user_session_path, class: "bg-blue-500 text-white px-4 py-2 mr-2 rounded hover:bg-blue-600" %>
     <%= link_to "Sign up", new_user_registration_path, class: "bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" %>
