@@ -1,0 +1,14 @@
+<%= render 'shared/errors', obj: @category %>
+<%= form_with model: @category do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :icon, class: "form-label" %>
+    <%= form.text_field :icon, class: "form-control", placeholder: "Icon URL" %>
+  </div>
+
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>
+<%= link_to "Back", categories_path %>

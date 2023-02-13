@@ -1,1 +1,7 @@
-<h1>Categories</h1>
+<h1>Hello from categories</h1>
+
+<% @categories.each do |category| %>
+  <%= link_to category.name, category_path(category) %>
+  <%= image_tag(category.icon, alt: "Icon pic", height: "80px") %>
+<% end %>
+<%= link_to "Add new category", new_category_path %>

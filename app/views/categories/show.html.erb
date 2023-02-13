@@ -1,0 +1,10 @@
+<h1><%= @category.name %></h1>
+
+<p><%= @total %></p>
+
+<% @expenses.each do |expense| %>
+  <p><%= expense.name %></p>
+  <p><%= expense.amount %></p>
+<% end %>
+<%= link_to "Add new expense", new_category_expense_path(@category) %>
+<%= link_to "Back", categories_path %>

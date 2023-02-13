@@ -1,0 +1,17 @@
+<%= render 'shared/errors', obj: @expense %>
+<%= form_with model: @expense, url: category_expenses_path do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :amount, class: "form-label" %>
+    <%= form.number_field :amount, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.collection_select(:category_ids, current_user.categories, :id, :name, {}, { multiple: true, size: 3, class: "select" }) %>
+  </div>
+
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>
+<%= link_to "Back", category_path(@category) %>
