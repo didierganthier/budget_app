@@ -1,11 +1,12 @@
-<div class="flex flex-col">
-<h1>Hello</h1>
+<div class="flex flex-col text-center">
+  <h1 class="text-2xl font-bold">Hello</h1>
 
-<% if user_signed_in? %>
-  <p>Logged in as <%= current_user.name %></p>
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-<% else %>
-    <%= link_to "Log in", new_user_session_path %>
-    <%= link_to "Sign up", new_user_registration_path %>
-<% end %>
+  <% if user_signed_in? %>
+    <p class="text-lg">Logged in as <%= current_user.name %></p>
+    <%= link_to "Add new category", new_category_path, class: "bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 my-5" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" %>
+  <% else %>
+    <%= link_to "Log in", new_user_session_path, class: "bg-blue-500 text-white px-4 py-2 mr-2 rounded hover:bg-blue-600" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" %>
+  <% end %>
 </div>
