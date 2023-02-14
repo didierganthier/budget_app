@@ -1,15 +1,14 @@
 databases:
   - name: postgres
-    type: postgres
-    plan: free
     ipAllowList: []
-
+    plan: free
 services:
   - type: web
-    name: budget-app
+    name: rails
     env: ruby
+    plan: free
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec rails s"
+    startCommand: bundle exec rails s
     envVars:
       - key: DATABASE_URL
         fromDatabase:
