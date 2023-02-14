@@ -1,5 +1,5 @@
-<div class="w-full max-w-xs">
-    <h1 class="font-hairline mb-6 text-center">Sign Up</h1>
+<div class="w-full">
+    <h1 class="font-hairline mb-6 text-center mt-6">Sign Up</h1>
 
     <%= form_for(resource,
                  as: resource_name,
@@ -10,6 +10,15 @@
         ) do |f| %>
 
         <%= devise_error_messages! %>
+
+        <div class="mb-4">
+            <%= f.label :name, class: "block font-bold mb-2 text-gray-700 text-sm" %>
+            <%= f.text_field :name,
+                             autofocus: true,
+                             autocomplete: "name",
+                             placeholder: "John Doe",
+                             class: "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none shadow focus:shadow-outline" %>
+        </div>
 
         <div class="mb-4">
             <%= f.label :email, class: "block font-bold mb-2 text-gray-700 text-sm" %>
