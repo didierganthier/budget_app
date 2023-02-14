@@ -2,13 +2,18 @@
   <h1 class="text-3xl font-medium mb-6">Your categories</h1>
 
   <div class="grid grid-cols-3 gap-6">
-    <% @categories.each do |category| %>
+  <% if @categories.empty? %>
+    <p class="text-gray-600">No categories found</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/7486/7486831.png" alt="No categories found" class="w-32 h-32 my-10">
+  <% else %>
+      <% @categories.each do |category| %>
       <div class="flex flex-col items-center p-6 rounded-lg bg-white shadow-lg">
         <%= link_to category.name, category_path(category), class: "text-xl font-medium mb-3" %>
         <%= image_tag(category.icon, alt: "Icon pic", class: "w-8 h-8") %>
         $<%= category.expenses.sum(:amount) %> spent
       </div>
     <% end %>
+  <% end %>
   </div>
   <%= link_to "Add new category", new_category_path, class: "bg-blue-400 text-white py-2 px-4 rounded-lg mt-6 hover:bg-blue-800" %>
 </div>
