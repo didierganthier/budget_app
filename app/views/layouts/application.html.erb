@@ -12,6 +12,9 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= render "layouts/header" %>
+    <% end %>
     <main class="container mx-auto">
       <%= yield %>
     </main>
