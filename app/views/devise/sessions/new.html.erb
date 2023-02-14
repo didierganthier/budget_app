@@ -1,24 +1,60 @@
-<div class="flex justify-center">
-  <div class="mt-16 px-8 py-4 w-96 h-fit bg-white rounded-lg shadow-lg">
-    <h2 class="text-xl font-bold text-center text-gray-700">Sign In</h2>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="my-4">
-        <%= f.label :email %><br/>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "px-4 py-2 rounded-md mt-2 w-full" %>
-      </div>
-      <div class="my-4">
-        <%= f.label :password %><br/>
-        <%= f.password_field :password, autocomplete: "current-password", class: "px-4 py-2 rounded-md mt-2 w-full" %>
-      </div>
-      <% if devise_mapping.rememberable? %>
-        <div class="my-4">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+<div class="w-full max-w-xs">
+    <h1 class="font-hairline mb-6 text-center">Log In</h1>
+
+    <%= form_for(resource,
+                 as: resource_name,
+                 url: session_path(resource_name),
+                 html: {
+                         class: "bg-white mb-4 px-8 pt-6 pb-8 rounded shadow-md"
+                 }
+        ) do |f| %>
+
+        <% render "devise/shared/error_messages", resource: resource %>
+
+        <% if flash.present? %>
+            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4" role="alert">
+                <p class="font-bold">Oops!</p>
+                <%- flash.each do |name, msg| -%>
+                    <%= content_tag :p,
+                                    msg.humanize,
+                                    id: "flash_#{name}" if msg.is_a?(String) %>
+                <%- end -%>
+            </div>
+        <% end %>
+
+        <div class="mb-4">
+            <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                              class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight foucs:outline-none focus:shadow-outline"
+            %>
         </div>
-      <% end %>
-      <button type="submit" class="w-full text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 py-2 rounded-md">
-        Log in
-      </button>
+
+        <div class="mb-4">
+            <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %>
+            <%= f.password_field :password,
+                                 autocomplete: "current-password",
+                                 class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+            <div class="mb-4">
+                <%= f.check_box :remember_me, class: "mr-2 leading-tight" %>
+                <%= f.label :remember_me,
+                            class: "align-baseline inline-block text-gray-700 text-sm"
+                %>
+            </div>
+        <% end %>
+
+        <div class="mb-4">
+            <%= f.submit "Log in",
+                         class: "button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+            %>
+        </div>
+
+        <%= render "devise/shared/links" %>
+
     <% end %>
-  </div>
+
+    <%= render "devise/shared/form_footer" %>
 </div>

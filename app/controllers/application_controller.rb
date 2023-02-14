@@ -19,4 +19,9 @@ class ApplicationController < ActionController::Base
     flash[:notice] = "Welcome, #{current_user.name}! Your account has been created."
     root_path
   end
+
+  def after_sign_out_path_for(resource)
+    flash[:notice] = 'You have been logged out.'
+    root_path
+  end
 end
