@@ -1,0 +1,21 @@
+<div class="p-5 bg-white rounded-lg shadow">
+<%= render 'shared/errors', obj: @expense %>
+<%= form_with model: @expense, url: category_expenses_path do |form| %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "text-lg font-medium" %>
+    <%= form.text_field :name, class: "w-full p-2 rounded-lg" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :amount, class: "text-lg font-medium" %>
+    <%= form.number_field :amount, class: "w-full p-2 rounded-lg" %>
+  </div>
+
+<label for="countries_multiple" class="block mb-2 text-lg font-medium text-gray-900">Select an option</label>
+<div class="mb-3 rounded-lg shadow-md">
+  <%= form.collection_select(:category_ids, current_user.categories, :id, :name, {}, { multiple: true, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" }) %>
+</div>
+<%= form.submit class: "p-2 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600" %>
+<% end %>
+<%= link_to "Back", category_path(@category), class: "text-lg font-medium" %>
+</div>

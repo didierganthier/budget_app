@@ -1,0 +1,15 @@
+<div class="bg-white p-6 rounded-lg shadow-lg">
+  <%= render 'shared/errors', obj: @category %>
+  <%= form_with model: @category do |form| %>
+    <div class="flex flex-col mb-4">
+      <%= form.label :name, class: "text-lg font-medium mb-2" %>
+      <%= form.text_field :name, class: "form-input mt-1 rounded-lg" %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= form.label :icon, class: "text-lg font-medium mb-2" %>
+      <%= form.text_field :icon, class: "form-input mt-1 rounded-lg", placeholder: "Icon URL" %>
+    </div>
+    <%= form.submit "Save", class: "bg-blue-500 text-white py-2 px-4 rounded" %>
+  <% end %>
+  <%= link_to "Back", categories_path, class: "text-blue-500 underline mt-4" %>
+</div>
