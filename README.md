@@ -11,7 +11,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[Budget\_App\] ](#-your_project_name-)
+- [📖 \[Budget App\] ](#-budget-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -167,7 +167,7 @@ If you like this project and want to support it, please consider giving it a ⭐
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for the opportunity to learn and grow as a developer.
+I would like to thank [Gregoire Vella](https://www.behance.net/gregoirevella) for the [design inspiration](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
