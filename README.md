@@ -11,7 +11,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[your\_project\_name\] ](#-your_project_name-)
+- [📖 \[Budget\_App\] ](#-your_project_name-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -31,7 +31,7 @@
   - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
   - [📝 License ](#-license-)
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Budget App] <a name="about-project"></a>
 
 **Budget App** is a Mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what. Built with Ruby on Rails, TailwindCSS, and PostgreSQL. Using Devise for authentication and RSpec/Capybara for testing.
 
