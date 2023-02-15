@@ -13,13 +13,13 @@ RSpec.describe User, type: :model do
     end
 
     it 'should have an email' do
-        user = User.new(name: 'Didier', password: 'test123')
-        expect(user.valid?).to eq false
+      user = User.new(name: 'Didier', password: 'test123')
+      expect(user.valid?).to eq false
     end
 
     it 'should have a password' do
-        user = User.new(name: 'Didier', email: 'didier@gmail.com')
-        expect(user.valid?).to eq false
+      user = User.new(name: 'Didier', email: 'didier@gmail.com')
+      expect(user.valid?).to eq false
     end
   end
 
